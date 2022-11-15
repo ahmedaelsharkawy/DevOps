@@ -44,8 +44,10 @@ def find_email(text):
         return email or empty string.
 
     '''
-    # email = re.findall(r"[a-z0-9\.\-+_]+@[a-z0-9\.\-+_]+\.[a-z]+", text) # use this to exclude emails without domain like @localhost 
     email = re.findall(r"[a-z0-9\.\-+_]+@[a-z0-9\.\-+_]+", text)
+    
+    # use this to exclude emails without domain like @localhost
+    # email = re.findall(r"[a-z0-9\.\-+_]+@[a-z0-9\.\-+_]+\.[a-z]+", text) 
     try:
         email = email[0]
     except:
